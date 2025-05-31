@@ -67,4 +67,17 @@
       margin-left: 12px;
     }
   }
+
+  .tray {
+    button {
+      margin: 3px;
+      padding: 0 18px;
+      border-radius: 9999px;
+      transition-duration: 150ms;
+
+      &:hover {
+        background-color: color.adjust(#ffffff, $alpha: -0.83);
+      }
+    }
+  }
 }

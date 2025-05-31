@@ -5,6 +5,7 @@ import {
   Bluetooth,
   Clock,
   Network,
+  Tray,
   Workspaces,
 } from "./modules";
 
@@ -27,6 +28,7 @@ export function Bar(gdkmonitor: Gdk.Monitor) {
           <Clock />
         </box>
         <box halign={Gtk.Align.END}>
+          <Tray />
           <button className="status">
             <box>
               <Network />

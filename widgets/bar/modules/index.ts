@@ -4,3 +4,4 @@ export * from "./bluetooth";
 export * from "./clock";
 export * from "./network";
 export * from "./workspaces";
+export * from "./tray";
