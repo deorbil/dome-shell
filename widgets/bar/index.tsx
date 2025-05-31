@@ -1,4 +1,5 @@
-import { App, Astal, Gdk } from "astal/gtk3";
+import { App, Astal, Gdk, Gtk } from "astal/gtk3";
+import { Clock } from "./modules";
 
 export function Bar(gdkmonitor: Gdk.Monitor) {
   const { TOP, LEFT, RIGHT } = Astal.WindowAnchor;
@@ -11,7 +12,11 @@ export function Bar(gdkmonitor: Gdk.Monitor) {
       exclusivity={Astal.Exclusivity.EXCLUSIVE}
       application={App}
     >
-      <centerbox className="bar"></centerbox>
+      <centerbox className="bar">
+        <box halign={Gtk.Align.CENTER}>
+          <Clock />
+        </box>
+      </centerbox>
     </window>
   );
 }

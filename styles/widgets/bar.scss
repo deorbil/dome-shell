@@ -1,4 +1,23 @@
+@use "sass:color";
+
 .bar {
   background-color: #000000;
   min-height: 32px;
+
+  .clock {
+    margin: 3px;
+    padding: 0 12px;
+    border-radius: 9999px;
+    font-weight: bold;
+    font-feature-settings: "tnum";
+    transition-duration: 150ms;
+
+    &:hover {
+      background-color: color.adjust(#ffffff, $alpha: -0.83);
+    }
+
+    label:not(:first-child) {
+      margin-left: 8px;
+    }
+  }
 }
