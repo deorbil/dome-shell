@@ -20,4 +20,36 @@
       margin-left: 8px;
     }
   }
+
+  .workspaces {
+    margin: 3px;
+    padding: 0 12px;
+    border-radius: 9999px;
+    transition-duration: 150ms;
+
+    &:hover {
+      background-color: color.adjust(#ffffff, $alpha: -0.83);
+    }
+
+    button {
+      min-width: 6px;
+      min-height: 6px;
+      background-color: color.adjust(#ffffff, $alpha: -0.5);
+      border-radius: 9999px;
+      transition-duration: 150ms;
+
+      &:not(:first-child) {
+        margin-left: 6px;
+      }
+
+      &.active {
+        background-color: #ffffff;
+      }
+
+      &.focused {
+        min-width: 26px;
+        min-height: 8px;
+      }
+    }
+  }
 }
