@@ -1,5 +1,9 @@
 {
     "name": "dome-shell",
+    "scripts": {
+        "dev": "ags run app.ts",
+        "build": "ags bundle app.ts dist/dome-shell"
+    },
     "dependencies": {
         "astal": "/usr/share/astal/gjs"
     },
