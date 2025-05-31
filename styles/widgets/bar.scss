@@ -52,4 +52,19 @@
       }
     }
   }
+
+  .status {
+    margin: 3px;
+    padding: 0 12px;
+    border-radius: 9999px;
+    transition-duration: 150ms;
+
+    &:hover {
+      background-color: color.adjust(#ffffff, $alpha: -0.83);
+    }
+
+    button:not(:first-child) {
+      margin-left: 12px;
+    }
+  }
 }
