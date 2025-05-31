@@ -1,0 +1,6 @@
+{
+    "name": "dome-shell",
+    "dependencies": {
+        "astal": "/usr/share/astal/gjs"
+    }
+}
