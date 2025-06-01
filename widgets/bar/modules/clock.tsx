@@ -9,7 +9,7 @@ export function Clock() {
     <button className="clock">
       {dateTime((dateTime) => (
         <box>
-          <label>{dateTime.format("%b %e")}</label>
+          <label>{dateTime.format("%b %d")}</label>
           <label>{dateTime.format("%I:%M %p")}</label>
         </box>
       ))}
