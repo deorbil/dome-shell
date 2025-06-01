@@ -1,20 +1,28 @@
 @use "sass:color";
 
+$color: #ffffff;
+$background-color: #000000;
+
+@mixin button {
+  margin: 3px;
+  padding: 0 12px;
+  border-radius: 9999px;
+  transition-duration: 150ms;
+
+  &:hover {
+    background-color: color.adjust($color, $alpha: -0.83);
+  }
+}
+
 .bar {
-  background-color: #000000;
+  background-color: $background-color;
   min-height: 32px;
 
   .clock {
-    margin: 3px;
-    padding: 0 12px;
-    border-radius: 9999px;
+    @include button;
+
     font-weight: bold;
     font-feature-settings: "tnum";
-    transition-duration: 150ms;
-
-    &:hover {
-      background-color: color.adjust(#ffffff, $alpha: -0.83);
-    }
 
     label:not(:first-child) {
       margin-left: 8px;
@@ -22,19 +30,12 @@
   }
 
   .workspaces {
-    margin: 3px;
-    padding: 0 12px;
-    border-radius: 9999px;
-    transition-duration: 150ms;
-
-    &:hover {
-      background-color: color.adjust(#ffffff, $alpha: -0.83);
-    }
+    @include button;
 
     button {
       min-width: 6px;
       min-height: 6px;
-      background-color: color.adjust(#ffffff, $alpha: -0.5);
+      background-color: color.adjust($color, $alpha: -0.5);
       border-radius: 9999px;
       transition-duration: 150ms;
 
@@ -43,7 +44,7 @@
       }
 
       &.active {
-        background-color: #ffffff;
+        background-color: $color;
       }
 
       &.focused {
@@ -54,14 +55,7 @@
   }
 
   .status {
-    margin: 3px;
-    padding: 0 12px;
-    border-radius: 9999px;
-    transition-duration: 150ms;
-
-    &:hover {
-      background-color: color.adjust(#ffffff, $alpha: -0.83);
-    }
+    @include button;
 
     button:not(:first-child) {
       margin-left: 12px;
@@ -70,14 +64,9 @@
 
   .tray {
     button {
-      margin: 3px;
-      padding: 0 18px;
-      border-radius: 9999px;
-      transition-duration: 150ms;
+      @include button;
 
-      &:hover {
-        background-color: color.adjust(#ffffff, $alpha: -0.83);
-      }
+      padding: 0 18px;
     }
   }
 }
