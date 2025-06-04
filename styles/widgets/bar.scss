@@ -16,6 +16,7 @@ $background-color: #000000;
 
 .bar {
   background-color: $background-color;
+  color: $color;
   min-height: 32px;
 
   .clock {
