@@ -1,13 +1,5 @@
 import { App, Astal, Gdk, Gtk } from "astal/gtk3";
-import {
-  Audio,
-  Battery,
-  Bluetooth,
-  Clock,
-  Network,
-  Tray,
-  Workspaces,
-} from "./modules";
+import { Clock, Status, Tray, Workspaces } from "./modules";
 
 export function Bar(gdkmonitor: Gdk.Monitor) {
   const { TOP, LEFT, RIGHT } = Astal.WindowAnchor;
@@ -29,14 +21,7 @@ export function Bar(gdkmonitor: Gdk.Monitor) {
         </box>
         <box halign={Gtk.Align.END}>
           <Tray />
-          <button className="status">
-            <box>
-              <Network />
-              <Bluetooth />
-              <Audio />
-              <Battery />
-            </box>
-          </button>
+          <Status />
         </box>
       </centerbox>
     </window>
