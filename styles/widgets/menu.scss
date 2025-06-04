@@ -1,0 +1,31 @@
+@use "sass:color";
+
+$color: #ffffff;
+$background-color: #36363a;
+
+menu {
+  padding: 6px;
+  background-color: $background-color;
+  color: $color;
+  border: 1px solid color.adjust($background-color, $lightness: 5%);
+  border-radius: 20px;
+
+  menuitem {
+    padding: 9px 12px;
+    border-radius: 12px;
+    transition-duration: 100ms;
+
+    &:hover {
+      background-color: color.adjust(
+        color.adjust($background-color, $lightness: 5%),
+        $lightness: 7%
+      );
+    }
+  }
+
+  separator {
+    margin: 6px 0;
+    min-height: 1px;
+    background-color: color.adjust($color, $alpha: -0.9);
+  }
+}
