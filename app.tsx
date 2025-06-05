@@ -6,6 +6,6 @@ import { Bar } from "./widgets";
 App.start({
   css: styles,
   main() {
-    App.get_monitors().map(Bar);
+    App.get_monitors().map((gdkmonitor) => <Bar gdkmonitor={gdkmonitor} />);
   },
 });

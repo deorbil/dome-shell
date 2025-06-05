@@ -1,7 +1,7 @@
 import { App, Astal, Gdk, Gtk } from "astal/gtk3";
 import { Clock, Status, Tray, Workspaces } from "./modules";
 
-export function Bar(gdkmonitor: Gdk.Monitor) {
+export function Bar({ gdkmonitor }: { gdkmonitor: Gdk.Monitor }) {
   const { TOP, LEFT, RIGHT } = Astal.WindowAnchor;
   return (
     <window
