@@ -2,10 +2,11 @@
 import { App } from "astal/gtk3";
 import styles from "styles/main.scss";
 import { Bar } from "widgets";
+import { Monitor } from "lib/monitor";
 
 App.start({
   css: styles,
   main() {
-    App.get_monitors().map((gdkmonitor) => <Bar gdkmonitor={gdkmonitor} />);
+    Monitor.map((monitor) => <Bar monitor={monitor} />);
   },
 });

@@ -1,13 +1,14 @@
-import { App, Astal, Gdk, Gtk } from "astal/gtk3";
+import { App, Astal, Gtk } from "astal/gtk3";
 import { Clock, Status, Tray, Workspaces } from "./modules";
+import { Monitor } from "lib/monitor";
 
-export function Bar({ gdkmonitor }: { gdkmonitor: Gdk.Monitor }) {
+export function Bar({ monitor }: { monitor: Monitor }) {
   const { TOP, LEFT, RIGHT } = Astal.WindowAnchor;
   return (
     <window
-      name="bar"
+      name={`bar-${monitor.name}`}
       namespace="bar"
-      gdkmonitor={gdkmonitor}
+      gdkmonitor={monitor.gdkmonitor}
       anchor={TOP | LEFT | RIGHT}
       exclusivity={Astal.Exclusivity.EXCLUSIVE}
       application={App}
