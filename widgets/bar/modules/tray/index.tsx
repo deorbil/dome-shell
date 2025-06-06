@@ -10,6 +10,7 @@ function TrayItem({ item }: { item: AstalTray.TrayItem }) {
     (menuModel, actionGroup) => {
       const menu = Gtk.Menu.new_from_model(menuModel);
       menu.insert_action_group("dbusmenu", actionGroup);
+      menu.widthRequest = 220;
       return {
         activate() {
           item.activate(0, 0);
