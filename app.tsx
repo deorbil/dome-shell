@@ -6,6 +6,7 @@ import { Monitor } from "lib/monitor";
 
 App.start({
   css: styles,
+  instanceName: "dome-shell",
   main() {
     Monitor.map((monitor) => <Bar monitor={monitor} />);
   },
