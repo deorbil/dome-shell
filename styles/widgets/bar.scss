@@ -1,0 +1,63 @@
+@use "sass:color";
+
+$color: #ffffff;
+$background-color: #000000;
+
+@mixin button {
+  margin: 3px;
+  padding: 0 12px;
+  border-radius: 9999px;
+  transition-duration: 150ms;
+
+  &:hover {
+    background-color: color.adjust($color, $alpha: -0.83);
+  }
+}
+
+.bar {
+  background-color: $background-color;
+  color: $color;
+  min-height: 32px;
+
+  .clock {
+    @include button;
+
+    font-weight: bold;
+    font-feature-settings: "tnum";
+
+    label:not(:first-child) {
+      margin-left: 8px;
+    }
+  }
+
+  .workspaces {
+    @include button;
+
+    .workspace {
+      &:not(:first-child) {
+        margin-left: 5px;
+      }
+
+      button {
+        background-color: $color;
+        border-radius: 9999px;
+      }
+    }
+  }
+
+  .status {
+    @include button;
+
+    button:not(:first-child) {
+      margin-left: 12px;
+    }
+  }
+
+  .tray {
+    button {
+      @include button;
+
+      padding: 0 18px;
+    }
+  }
+}

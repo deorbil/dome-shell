@@ -1,6 +1,13 @@
 {
     "name": "dome-shell",
+    "scripts": {
+        "dev": "ags run app.tsx",
+        "build": "ags bundle app.tsx dist/dome-shell"
+    },
     "dependencies": {
         "astal": "/usr/share/astal/gjs"
+    },
+    "devDependencies": {
+        "typescript": "^5.7.3"
     }
 }
