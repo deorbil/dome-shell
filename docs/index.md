@@ -12,4 +12,10 @@ hero:
     - theme: alt
       text: Source Code
       link: https://github.com/deorbil/dome-shell
+
+features:
+  - title: Modern Design
+    details: Dome Shell is an opinionated desktop shell based on GNOME, featuring a clean and minimalist design.
+  - title: Hyprland Integration
+    details: Built specifically for Hyprland, Dome Shell leverages its features for a seamless user experience.
 ---
