@@ -1,5 +1,5 @@
-# dome-shell
+# Dome Shell
 
 A familiar looking Hyprland shell.
 
-![2025-05-31T23:27:19,770229017+07:00](https://github.com/user-attachments/assets/d1cbd4fa-6683-4add-88b4-c76e3b4ca890)
+![2025-06-07T16:08:08,035601473+07:00](https://github.com/user-attachments/assets/79636cdb-9831-48db-9b4d-6e91d40bfaf5)
