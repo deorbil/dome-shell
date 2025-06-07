@@ -27,3 +27,14 @@ git clone https://github.com/deorbil/dome-shell.git
 cd dome-shell
 npm run build
 ```
+
+::: tip
+
+Move the executable to a directory in your `PATH` (such as `/usr/local/bin` or `~/.local/bin`).
+
+```sh
+sudo cp dist/dome-shell /usr/local/bin/
+cp dist/dome-shell ~/.local/bin/
+```
+
+:::
