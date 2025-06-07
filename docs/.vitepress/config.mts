@@ -6,6 +6,11 @@ export default defineConfig({
   description: "A familiar looking Hyprland shell.",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    footer: {
+      message: "Released under the GPL-3.0 License",
+      copyright: "Copyright © 2025 deorbil",
+    },
+
     nav: [
       { text: "Guide", link: "/guide/installation", activeMatch: "/guide/" },
     ],
