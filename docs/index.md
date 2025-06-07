@@ -7,6 +7,9 @@ hero:
   text: A Familiar Looking Hyprland Shell
   actions:
     - theme: brand
+      text: Quick Start
+      link: /guide/installation
+    - theme: alt
       text: Source Code
       link: https://github.com/deorbil/dome-shell
 ---
