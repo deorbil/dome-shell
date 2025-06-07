@@ -4,6 +4,9 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "Dome Shell",
   description: "A familiar looking Hyprland shell.",
+
+  base: "/dome-shell/",
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     footer: {
