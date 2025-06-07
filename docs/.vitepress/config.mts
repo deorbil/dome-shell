@@ -6,6 +6,15 @@ export default defineConfig({
   description: "A familiar looking Hyprland shell.",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    nav: [{ text: "Guide", link: "/guide/installation" }],
+
+    sidebar: [
+      {
+        text: "Getting Started",
+        items: [{ text: "Installation", link: "/guide/installation" }],
+      },
+    ],
+
     socialLinks: [
       { icon: "github", link: "https://github.com/deorbil/dome-shell" },
     ],
