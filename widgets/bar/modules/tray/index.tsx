@@ -14,6 +14,7 @@ function TrayItem({ item }: { item: AstalTray.TrayItem }) {
       menu = Gtk.Menu.new_from_model(menuModel);
       menu.insert_action_group("dbusmenu", actionGroup);
       menu.widthRequest = 220;
+      return menu;
     },
   );
 
@@ -22,12 +23,22 @@ function TrayItem({ item }: { item: AstalTray.TrayItem }) {
   }
 
   function show(self: Gtk.Widget) {
-    self.set_state(Gtk.StateType.NORMAL);
     menu?.popup_at_widget(self, Gdk.Gravity.SOUTH, Gdk.Gravity.NORTH, null);
   }
 
   return (
     <button
+      setup={(self) => {
+        self.hook(
+          menuModel,
+          (function update() {
+            self.hook(menuModel.get(), "hide", () => {
+              self.set_state(Gtk.StateType.NORMAL);
+            });
+            return update;
+          })(),
+        );
+      }}
       onClickRelease={(self, e) => {
         if (e.button === Astal.MouseButton.PRIMARY) {
           activate();
