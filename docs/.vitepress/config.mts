@@ -22,7 +22,10 @@ export default defineConfig({
       {
         text: "Getting Started",
         collapsed: false,
-        items: [{ text: "Installation", link: "/guide/installation" }],
+        items: [
+          { text: "Installation", link: "/guide/installation" },
+          { text: "Usage", link: "/guide/usage" },
+        ],
       },
     ],
 
