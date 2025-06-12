@@ -4,19 +4,14 @@
 
 ### Prerequisites
 
-::: details Arch Linux {open}
+Install the following tools:
 
-Install the following packages using your preferred AUR helper (such as `yay` or `paru`):
+- [git](https://git-scm.com/)
+- [npm](https://nodejs.org/)
 
-```txt
-aylurs-gtk-shell
-bluez
-hyprland
-networkmanager
-xdg-desktop-portal-hyprland
-```
+Install the following dependencies:
 
-:::
+- [aylurs-gtk-shell](https://aylur.github.io/ags/)
 
 ### Bundling
 
