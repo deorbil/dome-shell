@@ -20,7 +20,7 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: "Getting Started",
+        text: "Guide",
         collapsed: false,
         items: [
           { text: "Installation", link: "/guide/installation" },

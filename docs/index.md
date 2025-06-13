@@ -7,7 +7,7 @@ hero:
   text: A Familiar Looking Hyprland Shell
   actions:
     - theme: brand
-      text: Quick Start
+      text: Get Started
       link: /guide/installation
     - theme: alt
       text: Source Code
