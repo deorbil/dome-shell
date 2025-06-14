@@ -4,6 +4,19 @@
 
 ## Installation
 
+::: details Arch Linux
+
+::: code-group
+
+```sh [paru]
+mkdir -p ~/.cache/paru/clone/dome-shell-git
+cd ~/.cache/paru/clone/dome-shell-git
+curl -O https://raw.githubusercontent.com/deorbil/aur/master/dome-shell-git/PKGBUILD
+paru -Bi .
+```
+
+:::
+
 ::: details Building from Source {open}
 
 **Prerequisites**
