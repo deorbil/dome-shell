@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /guide/installation
+      link: /guide/getting-started
     - theme: alt
       text: Source Code
       link: https://github.com/deorbil/dome-shell
