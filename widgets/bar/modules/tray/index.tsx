@@ -1,58 +1,38 @@
-import { bind, Variable } from "astal";
+import { bind } from "astal";
 import { Astal, Gdk, Gtk } from "astal/gtk3";
 import AstalTray from "gi://AstalTray";
 
 const tray = AstalTray.get_default();
 
 function TrayItem({ item }: { item: AstalTray.TrayItem }) {
-  let menu: Gtk.Menu;
-
-  const menuModel = Variable.derive(
-    [bind(item, "menuModel"), bind(item, "actionGroup")],
-    (menuModel, actionGroup) => {
-      menu?.destroy();
-      menu = Gtk.Menu.new_from_model(menuModel);
-      menu.insert_action_group("dbusmenu", actionGroup);
-      menu.widthRequest = 220;
-      return menu;
-    },
-  );
-
   function activate() {
     item.activate(0, 0);
   }
 
-  function show(self: Gtk.Widget) {
+  function show(self: Gtk.Widget, menu: Gtk.Menu | null) {
     menu?.popup_at_widget(self, Gdk.Gravity.SOUTH, Gdk.Gravity.NORTH, null);
   }
 
   return (
-    <button
-      setup={(self) => {
-        self.hook(
-          menuModel,
-          (function update() {
-            self.hook(menuModel.get(), "hide", () => {
-              self.set_state(Gtk.StateType.NORMAL);
-            });
-            return update;
-          })(),
-        );
-      }}
-      onClickRelease={(self, e) => {
-        if (e.button === Astal.MouseButton.PRIMARY) {
+    <menubutton
+      usePopover={false}
+      menuModel={bind(item, "menuModel")}
+      actionGroup={bind(item, "actionGroup").as((actionGroup) => [
+        "dbusmenu",
+        actionGroup,
+      ])}
+      onButtonReleaseEvent={(self, event) => {
+        const [_, button] = event.get_button();
+        if (button === Astal.MouseButton.PRIMARY) {
           activate();
-        } else if (e.button === Astal.MouseButton.SECONDARY) {
-          show(self);
+        } else if (button === Astal.MouseButton.SECONDARY) {
+          show(self, self.get_popup());
         }
-      }}
-      onDestroy={() => {
-        menu?.destroy();
-        menuModel.drop();
+        return true;
       }}
     >
       <icon gicon={bind(item, "gicon")} />
-    </button>
+    </menubutton>
   );
 }
 
