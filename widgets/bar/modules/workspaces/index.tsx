@@ -19,40 +19,25 @@ export function Workspace({ id }: { id: number }) {
     const expansion = clamp(1 - distance, 0, 1);
     return expansion;
   });
+
   return (
     <box className="workspace" valign={Gtk.Align.CENTER}>
       <box
-        setup={(self) => {
-          self.hook(
-            expansion,
-            (function update() {
-              self.widthRequest = Math.round(
-                lerp(1, 2.75, expansion.get()) * 8,
-              );
-              return update;
-            })(),
-          );
-        }}
+        widthRequest={bind(expansion).as((expansion) =>
+          Math.round(lerp(1, 2.75, expansion) * 8),
+        )}
       >
         <button
-          setup={(self) => {
-            self.hook(
-              expansion,
-              (function update() {
-                self.opacity = lerp(0.5, 1, expansion.get());
-                self.widthRequest = Math.round(
-                  lerp(0.75, 1, expansion.get()) *
-                    lerp(1, 2.75, expansion.get()) *
-                    8,
-                );
-                self.heightRequest = lerp(0.75, 1, expansion.get()) * 8;
-                return update;
-              })(),
-            );
-          }}
+          opacity={bind(expansion).as((expansion) => lerp(0.5, 1, expansion))}
+          widthRequest={bind(expansion).as((expansion) =>
+            Math.round(lerp(0.75, 1, expansion) * lerp(1, 2.75, expansion) * 8),
+          )}
+          heightRequest={bind(expansion).as(
+            (expansion) => lerp(0.75, 1, expansion) * 8,
+          )}
           valign={Gtk.Align.CENTER}
           halign={Gtk.Align.CENTER}
-        ></button>
+        />
       </box>
     </box>
   );
