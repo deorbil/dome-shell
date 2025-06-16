@@ -21,6 +21,10 @@ menu {
         $lightness: 7%
       );
     }
+
+    &:disabled {
+      color: color.mix($color, $background-color, 50%);
+    }
   }
 
   separator {
