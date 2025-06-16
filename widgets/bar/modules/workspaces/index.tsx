@@ -21,24 +21,22 @@ export function Workspace({ id }: { id: number }) {
   });
 
   return (
-    <box className="workspace" valign={Gtk.Align.CENTER}>
-      <box
+    <box
+      widthRequest={bind(expansion).as((expansion) =>
+        Math.round(lerp(1, 2.75, expansion) * 8),
+      )}
+    >
+      <button
+        opacity={bind(expansion).as((expansion) => lerp(0.5, 1, expansion))}
         widthRequest={bind(expansion).as((expansion) =>
-          Math.round(lerp(1, 2.75, expansion) * 8),
+          Math.round(lerp(0.75, 1, expansion) * lerp(1, 2.75, expansion) * 8),
         )}
-      >
-        <button
-          opacity={bind(expansion).as((expansion) => lerp(0.5, 1, expansion))}
-          widthRequest={bind(expansion).as((expansion) =>
-            Math.round(lerp(0.75, 1, expansion) * lerp(1, 2.75, expansion) * 8),
-          )}
-          heightRequest={bind(expansion).as(
-            (expansion) => lerp(0.75, 1, expansion) * 8,
-          )}
-          valign={Gtk.Align.CENTER}
-          halign={Gtk.Align.CENTER}
-        />
-      </box>
+        heightRequest={bind(expansion).as(
+          (expansion) => lerp(0.75, 1, expansion) * 8,
+        )}
+        valign={Gtk.Align.CENTER}
+        halign={Gtk.Align.CENTER}
+      />
     </box>
   );
 }
@@ -46,7 +44,7 @@ export function Workspace({ id }: { id: number }) {
 export function Workspaces() {
   return (
     <button className="workspaces">
-      <box>
+      <box spacing={5}>
         {Array.from({ length: 10 }, (_, i) => i + 1).map((id) => (
           <Workspace id={id} />
         ))}

@@ -6,7 +6,7 @@ import { Network } from "./network";
 export function Status() {
   return (
     <button className="status">
-      <box>
+      <box spacing={12}>
         <VolumeInput />
         <Network />
         <Bluetooth />

@@ -5,8 +5,8 @@ const bluetooth = AstalBluetooth.get_default();
 
 export function Bluetooth() {
   return (
-    <button visible={bind(bluetooth, "isConnected")}>
+    <box className="status-item" visible={bind(bluetooth, "isConnected")}>
       <icon icon="bluetooth-active-symbolic" />
-    </button>
+    </box>
   );
 }

@@ -26,7 +26,8 @@ export function Network() {
   );
 
   return (
-    <button
+    <box
+      className="status-item"
       visible={visible()}
       onDestroy={() => {
         visible.drop();
@@ -34,6 +35,6 @@ export function Network() {
       }}
     >
       <icon icon={iconName()} />
-    </button>
+    </box>
   );
 }

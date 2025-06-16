@@ -24,33 +24,19 @@ $background-color: #000000;
 
     font-weight: bold;
     font-feature-settings: "tnum";
-
-    label:not(:first-child) {
-      margin-left: 8px;
-    }
   }
 
   .workspaces {
     @include button;
 
-    .workspace {
-      &:not(:first-child) {
-        margin-left: 5px;
-      }
-
-      button {
-        background-color: $color;
-        border-radius: 9999px;
-      }
+    button {
+      background-color: $color;
+      border-radius: 9999px;
     }
   }
 
   .status {
     @include button;
-
-    button:not(:first-child) {
-      margin-left: 12px;
-    }
 
     .privacy-status-item {
       color: #ff7800;

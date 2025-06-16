@@ -8,7 +8,7 @@ export function Clock() {
   return (
     <button className="clock">
       {dateTime((dateTime) => (
-        <box>
+        <box spacing={8}>
           <label>{dateTime.format("%b %d")}</label>
           <label>{dateTime.format("%I:%M %p")}</label>
         </box>

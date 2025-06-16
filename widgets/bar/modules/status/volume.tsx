@@ -6,21 +6,24 @@ const { defaultMicrophone, defaultSpeaker } = wp.audio;
 
 export function VolumeInput() {
   return (
-    <button
-      className="privacy-status-item"
+    <box
+      className="status-item privacy-status-item"
       visible={bind(defaultMicrophone, "state").as(
         (state) => state === AstalWp.NodeState.RUNNING,
       )}
     >
       <icon icon={bind(defaultMicrophone, "volumeIcon")} />
-    </button>
+    </box>
   );
 }
 
 export function VolumeOutput() {
   return (
-    <button visible={bind(defaultSpeaker, "device").as(Boolean)}>
+    <box
+      className="status-item"
+      visible={bind(defaultSpeaker, "device").as(Boolean)}
+    >
       <icon icon={bind(defaultSpeaker, "volumeIcon")} />
-    </button>
+    </box>
   );
 }
