@@ -1,4 +1,4 @@
-import { Audio } from "./audio";
+import { VolumeOutput } from "./volume";
 import { Battery } from "./battery";
 import { Bluetooth } from "./bluetooth";
 import { Network } from "./network";
@@ -9,7 +9,7 @@ export function Status() {
       <box>
         <Network />
         <Bluetooth />
-        <Audio />
+        <VolumeOutput />
         <Battery />
       </box>
     </button>
