@@ -1,7 +1,7 @@
-import { VolumeInput, VolumeOutput } from "./volume";
-import { Battery } from "./battery";
 import { Bluetooth } from "./bluetooth";
 import { Network } from "./network";
+import { Power } from "./power";
+import { VolumeInput, VolumeOutput } from "./volume";
 
 export function Status() {
   return (
@@ -11,7 +11,7 @@ export function Status() {
         <Network />
         <Bluetooth />
         <VolumeOutput />
-        <Battery />
+        <Power />
       </box>
     </button>
   );
