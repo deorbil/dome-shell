@@ -28,7 +28,11 @@ function TrayItem({ item }: { item: AstalTray.TrayItem }) {
       onButtonReleaseEvent={(self, event) => {
         const [_, button] = event.get_button();
         if (button === Gdk.BUTTON_PRIMARY) {
-          activate();
+          if (item.isMenu) {
+            show(self, self.get_popup());
+          } else {
+            activate();
+          }
         } else if (button === Gdk.BUTTON_SECONDARY) {
           show(self, self.get_popup());
         }
