@@ -6,18 +6,15 @@
 
 ::: details Arch Linux
 
-::: code-group
-
-```sh [paru]
-mkdir -p ~/.cache/paru/clone/dome-shell-git
-cd ~/.cache/paru/clone/dome-shell-git
-curl -O https://raw.githubusercontent.com/deorbil/aur/master/dome-shell-git/PKGBUILD
-paru -Bi .
+```sh
+git clone https://github.com/deorbil-aur/dome-shell-git.git
+cd dome-shell-git
+makepkg -si
 ```
 
 :::
 
-::: details Building from Source {open}
+:::: details Building from Source {open}
 
 **Prerequisites**
 
@@ -50,6 +47,8 @@ cp dist/dome-shell ~/.local/bin/
 ```
 
 :::
+
+::::
 
 ## Usage
 
