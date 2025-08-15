@@ -4,16 +4,6 @@
 
 ## Installation
 
-::: details Arch Linux
-
-```sh
-git clone https://github.com/deorbil-aur/dome-shell-git.git
-cd dome-shell-git
-makepkg -si
-```
-
-:::
-
 :::: details Building from Source {open}
 
 **Prerequisites**
