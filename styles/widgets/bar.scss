@@ -46,8 +46,6 @@ $background-color: #000000;
   .tray {
     button {
       @include button;
-
-      padding: 0 18px;
     }
   }
 }
